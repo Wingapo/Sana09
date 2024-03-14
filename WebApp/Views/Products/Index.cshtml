@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Products";
+    Random random = new();
+}
+<h2>Trending</h2>
+<section class="d-flex justify-content-between">
+    @for (int i = 0; i < 5; i++)
+    {
+        <div style="width:200px; border: 1px solid; padding: 5px">
+            <div style="width: 100%; height: 150px; border: 1px solid">picture</div>
+            <p>game name @(i+1)</p>
+            <p>description</p>
+            <button>@random.Next(10,30) $</button>
+        </div>
+    }
+</section>
+@for(int j = 0; j < 3; j++)
+{
+    <hr style="margin: 30px 0" />
+    <h2>Genre @(j + 1)</h2>
+    <section class="d-flex justify-content-between">
+        @for (int i = 0; i < 5; i++)
+        {
+            <div style="width:200px; border: 1px solid; padding: 5px">
+                <div style="width: 100%; height: 150px; border: 1px solid">picture</div>
+                <p>game name @(i + 1)</p>
+                <p>description</p>
+                <button>@random.Next(5, 20) $</button>
+            </div>
+        }
+    </section>
+}
